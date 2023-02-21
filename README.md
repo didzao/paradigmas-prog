@@ -1,4 +1,4 @@
-# Paradigma de P.imp.e Orie.a Objetos
+# Paradigma de programação imperativa e orieentada a objetos
 
 
 Desenvolva um jogo simples fazendo uso de uma LP imperativa de sua escolha a qual você nunca trabalhou (Excluindo-se a linguagem C). Para a implementação, devem ser levados em consideração os aspectos estudados até aqui para que o código seja o melhor possível. O jogo e LP devem ser escolhidos pelos alunos e apresentados ao professor para aprovação do projeto.
