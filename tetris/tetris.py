@@ -10,7 +10,7 @@ class Text:
         self.font = ft.Font(FONT_PATH)
 
     def draw(self):
-        self.font.render_to(self.app.screen, (WINDOWN_WIDTH * 0.6, WINDOW_HEIGHT * 0.02),
+        self.font.render_to(self.app.screen, (WINDOWN_WIDTH * 0.61, WINDOW_HEIGHT * 0.02),
                             text='TETRIS', fgcolor=TEXT_COLOR, size=TILE_SIZE * 3)
 
         self.font.render_to(self.app.screen, (WINDOWN_WIDTH * 0.7, WINDOW_HEIGHT * 0.28),
@@ -104,7 +104,7 @@ class Tetris:
     def draw_grid(self):
         for x in range(FIELD_WIDTH):
             for y in range(FIELD_HEIGHT):
-                pygame.draw.rect(self.app.screen, 'white', (x *
+                pygame.draw.rect(self.app.screen, LINES_COLOR, (x *
                                  TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE), 1)
 
     def update(self):

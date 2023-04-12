@@ -3,9 +3,10 @@ import pygame
 vec = pygame.math.Vector2
 
 FPS = 60
-FIELD_COLOR = (139, 172, 15)
-BACKGROUND_COLOR = (15, 56, 15)
-TEXT_COLOR = (226, 243, 228)
+FIELD_COLOR = (224, 248, 207)
+BACKGROUND_COLOR = (48, 104, 80)
+TEXT_COLOR = FIELD_COLOR
+LINES_COLOR = (134, 192, 109)
 
 SPRITE_DIR_PATH = 'tetris/assets/sprites'
 FONT_PATH = 'tetris/assets/font/Pixeltype.ttf'
