@@ -11,16 +11,16 @@ class Text:
 
     def draw(self):
         self.font.render_to(self.app.screen, (WINDOWN_WIDTH * 0.6, WINDOW_HEIGHT * 0.02),
-                            text='TETRIS', fgcolor='white', size=TILE_SIZE * 3)
+                            text='TETRIS', fgcolor=TEXT_COLOR, size=TILE_SIZE * 3)
 
-        self.font.render_to(self.app.screen, (WINDOWN_WIDTH * 0.7, WINDOW_HEIGHT * 0.22),
-                            text='NEXT', fgcolor='white', size=TILE_SIZE * 2)
+        self.font.render_to(self.app.screen, (WINDOWN_WIDTH * 0.7, WINDOW_HEIGHT * 0.28),
+                            text='NEXT', fgcolor=TEXT_COLOR, size=TILE_SIZE * 2)
 
         self.font.render_to(self.app.screen, (WINDOWN_WIDTH * 0.7, WINDOW_HEIGHT * 0.67),
-                            text='SCORE', fgcolor='white', size=TILE_SIZE * 2)
+                            text='SCORE', fgcolor=TEXT_COLOR, size=TILE_SIZE * 2)
 
-        self.font.render_to(self.app.screen, (WINDOWN_WIDTH * 0.7, WINDOW_HEIGHT * 0.8),
-                            text=f'{self.app.tetris.score}', fgcolor='white', size=TILE_SIZE * 2.5)
+        self.font.render_to(self.app.screen, (WINDOWN_WIDTH * 0.7, WINDOW_HEIGHT * 0.75),
+                            text=f'{self.app.tetris.score}', fgcolor=TEXT_COLOR, size=TILE_SIZE * 2.5)
 
 
 class Tetris:
@@ -34,10 +34,13 @@ class Tetris:
 
         self.score = 0
         self.full_lines = 0
-        self.points_per_lines = {0: 0, 1: 100, 2: 200, 3: 3000, 4: 400}
+
+        self.sound_landing = pygame.mixer.Sound(SOUND_EFFECT_LANDING)
+        self.sound_game_over = pygame.mixer.Sound(SOUND_EFFECT_GAME_OVER)
+        self.sound_full_line = pygame.mixer.Sound(SOUND_EFFECT_FULL_LINE)
 
     def get_score(self):
-        self.score += self.points_per_lines[self.full_lines]
+        self.score += self.full_lines * 100
         self.full_lines = 0
 
     def check_full_lines(self):  # certo
@@ -57,6 +60,7 @@ class Tetris:
                     self.field_array[row][x] = 0
 
                 self.full_lines += 1
+                self.sound_full_line.play()
 
     def put_tetromino_blocks_in_array(self):
         for block in self.tetromino.blocks:
@@ -68,7 +72,8 @@ class Tetris:
 
     def is_game_over(self):
         if self.tetromino.blocks[0].position.y == INITIAL_POSITION_OFFSET[1]:
-            pygame.time.wait(300)
+            self.sound_game_over.play()
+            pygame.time.wait(500)
             return True
 
     def check_tetromino_landing(self):
@@ -81,21 +86,25 @@ class Tetris:
                 self.next_tetromino.current = True
                 self.tetromino = self.next_tetromino
                 self.next_tetromino = Tetromino(self, current=False)
+                self.sound_landing.play()
 
     def control(self, pressed_key):
         if pressed_key == pygame.K_LEFT:
             self.tetromino.move(direction='left')
+            self.sound_landing.play()
         elif pressed_key == pygame.K_RIGHT:
             self.tetromino.move(direction='right')
+            self.sound_landing.play()
         elif pressed_key == pygame.K_UP:
             self.tetromino.rotate()
+            self.sound_landing.play()
         elif pressed_key == pygame.K_DOWN:
             self.speed_up = True
 
     def draw_grid(self):
         for x in range(FIELD_WIDTH):
             for y in range(FIELD_HEIGHT):
-                pygame.draw.rect(self.app.screen, 'black', (x *
+                pygame.draw.rect(self.app.screen, 'white', (x *
                                  TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE), 1)
 
     def update(self):

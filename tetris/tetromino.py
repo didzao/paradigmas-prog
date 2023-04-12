@@ -2,7 +2,7 @@ from settings import *
 import random
 
 
-class Block(pygame.sprite.Sprite):
+class Block (pygame.sprite.Sprite):
     def __init__(self, tetromino, position):
         self.tetromino = tetromino
         self.position = vec(position) + INITIAL_POSITION_OFFSET

@@ -3,11 +3,17 @@ import pygame
 vec = pygame.math.Vector2
 
 FPS = 60
-FIELD_COLOR = (133, 111, 142)
-BACKGROUND_COLOR = (24, 89, 117)
+FIELD_COLOR = (139, 172, 15)
+BACKGROUND_COLOR = (15, 56, 15)
+TEXT_COLOR = (226, 243, 228)
 
 SPRITE_DIR_PATH = 'tetris/assets/sprites'
 FONT_PATH = 'tetris/assets/font/Pixeltype.ttf'
+
+MUSIC = 'tetris/assets/audio/tetris.mp3'
+SOUND_EFFECT_LANDING = 'tetris/assets/audio/landing.wav'
+SOUND_EFFECT_FULL_LINE = 'tetris/assets/audio/fullLine.wav'
+SOUND_EFFECT_GAME_OVER = 'tetris/assets/audio/gameOver.wav'
 
 ANIMETION_TIME_INTERVAL = 150  # milisegundos
 FAST_ANIMETION_TIME_INTERVAL = 50
@@ -44,14 +50,4 @@ IMAGES = {
     4: 'tetris/assets/sprites/4.png',
     5: 'tetris/assets/sprites/5.png',
     6: 'tetris/assets/sprites/6.png',
-}
-
-COLORS = {
-    'pink': 'pink',
-    'blue': 'blue',
-    'orange': 'orange',
-    'green': 'green',
-    'yellow': 'yellow',
-    'red': 'red',
-    'purple': 'purple',
 }

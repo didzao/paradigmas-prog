@@ -14,6 +14,9 @@ class App:
         self.images = self.load_images()
         self.tetris = Tetris(self)
         self.text = Text(self)
+        pygame.mixer.music.set_volume(0.5)
+        pygame.mixer.music.load(MUSIC)
+        pygame.mixer.music.play(-1)
 
     def load_images(self):
         files = [item for item in pathlib.Path(
@@ -36,6 +39,10 @@ class App:
     def update(self):
         self.tetris.update()
         self.clock.tick(FPS)
+
+    def music(self):
+        self.music()
+        pygame.mixer.music.play(-1)
 
     def draw(self):
         self.screen.fill(color=BACKGROUND_COLOR)
