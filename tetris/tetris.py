@@ -22,6 +22,11 @@ class Text:
         self.font.render_to(self.app.screen, (WINDOWN_WIDTH * 0.7, WINDOW_HEIGHT * 0.75),
                             text=f'{self.app.tetris.score}', fgcolor=TEXT_COLOR, size=TILE_SIZE * 2.5)
 
+        self.font.render_to(self.app.screen, (WINDOWN_WIDTH * 0.6, WINDOW_HEIGHT * 0.9),
+                            text='Desenvolvido por Ingrid Lohmann', fgcolor=TEXT_COLOR, size=TILE_SIZE * 0.3)
+        self.font.render_to(self.app.screen, (WINDOWN_WIDTH * 0.6, WINDOW_HEIGHT * 0.92),
+                            text='Github: didzao', fgcolor=TEXT_COLOR, size=TILE_SIZE * 0.3)
+
 
 class Tetris:
     def __init__(self, app):
@@ -43,7 +48,7 @@ class Tetris:
         self.score += self.full_lines * 100
         self.full_lines = 0
 
-    def check_full_lines(self):  # certo
+    def check_full_lines(self):
         row = FIELD_HEIGHT - 1
         for y in range(FIELD_HEIGHT - 1, -1, -1):
             for x in range(FIELD_WIDTH):
