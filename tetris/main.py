@@ -40,10 +40,6 @@ class App:
         self.tetris.update()
         self.clock.tick(FPS)
 
-    def music(self):
-        self.music()
-        pygame.mixer.music.play(-1)
-
     def draw(self):
         self.screen.fill(color=BACKGROUND_COLOR)
         self.screen.fill(color=FIELD_COLOR, rect=(0, 0, *FIELD_RESOLUTION))
