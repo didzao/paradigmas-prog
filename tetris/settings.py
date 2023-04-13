@@ -16,7 +16,7 @@ SOUND_EFFECT_LANDING = 'tetris/assets/audio/landing.wav'
 SOUND_EFFECT_FULL_LINE = 'tetris/assets/audio/fullLine.wav'
 SOUND_EFFECT_GAME_OVER = 'tetris/assets/audio/gameOver.wav'
 
-ANIMETION_TIME_INTERVAL = 150  # milisegundos
+ANIMETION_TIME_INTERVAL = 200  # milisegundos
 FAST_ANIMETION_TIME_INTERVAL = 50
 
 TILE_SIZE = 50
