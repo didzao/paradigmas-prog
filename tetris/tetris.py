@@ -23,9 +23,11 @@ class Text:
                             text=f'{self.app.tetris.score}', fgcolor=TEXT_COLOR, size=TILE_SIZE * 2.5)
 
         self.font.render_to(self.app.screen, (WINDOWN_WIDTH * 0.6, WINDOW_HEIGHT * 0.9),
-                            text='Desenvolvido por Ingrid Lohmann', fgcolor=TEXT_COLOR, size=TILE_SIZE * 0.3)
-        self.font.render_to(self.app.screen, (WINDOWN_WIDTH * 0.6, WINDOW_HEIGHT * 0.92),
-                            text='Github: didzao', fgcolor=TEXT_COLOR, size=TILE_SIZE * 0.3)
+                            text='Desenvolvido por', fgcolor=TEXT_COLOR, size=TILE_SIZE * 0.8)
+        self.font.render_to(self.app.screen, (WINDOWN_WIDTH * 0.6, WINDOW_HEIGHT * 0.93),
+                            text='Ingrid Lohmann', fgcolor=TEXT_COLOR, size=TILE_SIZE * 0.8)
+        self.font.render_to(self.app.screen, (WINDOWN_WIDTH * 0.6, WINDOW_HEIGHT * 0.96),
+                            text='Github: didzao', fgcolor=TEXT_COLOR, size=TILE_SIZE * 0.8)
 
 
 class Tetris:
