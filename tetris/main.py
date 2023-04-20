@@ -14,7 +14,7 @@ class App:
         self.images = self.load_images()
         self.tetris = Tetris(self)
         self.text = Text(self)
-        pygame.mixer.music.set_volume(0.5)
+        pygame.mixer.music.set_volume(0.3)
         pygame.mixer.music.load(MUSIC)
         pygame.mixer.music.play(-1)
 

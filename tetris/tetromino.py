@@ -28,9 +28,7 @@ class Block (pygame.sprite.Sprite):
 
     def sfx_run(self):
         self.image = self.sfx_image
-        self.position.y -= self.sfx_speed
-        self.image = pygame.transform.rotate(
-            self.image, pygame.time.get_ticks() * self.sfx_speed)
+        self.image = pygame.transform.scale(self.image, (0, 0))
 
     def is_alive(self):
         if not self.alive:

@@ -42,9 +42,13 @@ class Tetris:
         self.score = 0
         self.full_lines = 0
 
-        self.sound_landing = pygame.mixer.Sound(SOUND_EFFECT_LANDING)
+        self.sound_lading = self.sound_landing = pygame.mixer.Sound(
+            SOUND_EFFECT_LANDING)
         self.sound_game_over = pygame.mixer.Sound(SOUND_EFFECT_GAME_OVER)
         self.sound_full_line = pygame.mixer.Sound(SOUND_EFFECT_FULL_LINE)
+        pygame.mixer.Sound.set_volume(self.sound_lading, 0.4)
+        pygame.mixer.Sound.set_volume(self.sound_game_over, 0.4)
+        pygame.mixer.Sound.set_volume(self.sound_full_line, 0.4)
 
     def get_score(self):
         self.score += self.full_lines * 100
