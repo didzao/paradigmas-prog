@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+body {
+  width: 100%;
+  background-color: skyblue;
+}
+
+.container {
+  width: 30rem;
+  margin: 2rem auto;
+}
+.container .title {
+  text-align: center;
+}
+
+.form {
+  background-color: aliceblue;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.form input {
+  flex: 1;
+  padding: 0.7rem;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+.form .button {
+  padding: 0.7rem;
+  background-color: darkblue;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+.lists .todo {
+  gap: 0.5rem;
+  display: flex;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  background-color: aliceblue;
+}
+.lists .todo i {
+  cursor: pointer;
+}/*# sourceMappingURL=styles.css.map */
