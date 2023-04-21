@@ -1,14 +1,21 @@
-import cx_Freeze
+import sys
+from cx_Freeze import setup, Executable
 
-executables = [cx_Freeze.Executable('main.py')]
+build_exe_options = {
+    "packages": ["pygame"],
+    'include_files': [
+        'font', 'sound', 'sprites',
+        'settings.py', 'tetris.py', 'tetromino.py',
+    ]}
 
-cx_Freeze.setup(
-    name="Tetris game",
-    options={'build_exe': {'packages': ['pygame'],
-                           'include_files': ['assets/audio', 'assets/font',
-                                             'assets/sprites', 'settings.py',
-                                             'tetris.py', 'tetromino.py']}},
+base = None
+if sys.platform == "win32":
+    base = "Win32GUI"
 
-    executables=executables
-
+setup(
+    name="Tetris",
+    version="1.0",
+    description="Jogo de tetris",
+    options={"build_exe": build_exe_options},
+    executables=[Executable(script="main.py", base=base)]
 )
