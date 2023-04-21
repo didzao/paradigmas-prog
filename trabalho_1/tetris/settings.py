@@ -8,13 +8,13 @@ BACKGROUND_COLOR = (48, 104, 80)
 TEXT_COLOR = FIELD_COLOR
 LINES_COLOR = (134, 192, 109)
 
-SPRITE_DIR_PATH = 'tetris/assets/sprites'
-FONT_PATH = 'tetris/assets/font/Pixeltype.ttf'
+SPRITE_DIR_PATH = 'trabalho_1/tetris/assets/sprites'
+FONT_PATH = 'trabalho_1/tetris/assets/font/Pixeltype.ttf'
 
-MUSIC = 'tetris/assets/audio/tetris.mp3'
-SOUND_EFFECT_LANDING = 'tetris/assets/audio/landing.wav'
-SOUND_EFFECT_FULL_LINE = 'tetris/assets/audio/fullLine.wav'
-SOUND_EFFECT_GAME_OVER = 'tetris/assets/audio/gameOver.wav'
+MUSIC = 'trabalho_1/tetris/assets/audio/tetris.mp3'
+SOUND_EFFECT_LANDING = 'trabalho_1/tetris/assets/audio/landing.wav'
+SOUND_EFFECT_FULL_LINE = 'trabalho_1/tetris/assets/audio/fullLine.wav'
+SOUND_EFFECT_GAME_OVER = 'trabalho_1/tetris/assets/audio/gameOver.wav'
 
 ANIMETION_TIME_INTERVAL = 200  # milisegundos
 FAST_ANIMETION_TIME_INTERVAL = 50
@@ -44,11 +44,11 @@ TETROMINOES = {
 }
 
 IMAGES = {
-    0: 'tetris/assets/sprites/0.png',
-    1: 'tetris/assets/sprites/1.png',
-    2: 'tetris/assets/sprites/2.png',
-    3: 'tetris/assets/sprites/3.png',
-    4: 'tetris/assets/sprites/4.png',
-    5: 'tetris/assets/sprites/5.png',
-    6: 'tetris/assets/sprites/6.png',
+    0: 'trabalho_1/tetris/assets/sprites/0.png',
+    1: 'trabalho_1/tetris/assets/sprites/1.png',
+    2: 'trabalho_1/tetris/assets/sprites/2.png',
+    3: 'trabalho_1/tetris/assets/sprites/3.png',
+    4: 'trabalho_1/tetris/assets/sprites/4.png',
+    5: 'trabalho_1/tetris/assets/sprites/5.png',
+    6: 'trabalho_1/tetris/assets/sprites/6.png',
 }
