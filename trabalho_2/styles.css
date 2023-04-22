@@ -35,18 +35,15 @@ body {
   outline: none;
   padding: 0.7rem;
 }
-.form input:active {
-  border: 1px !important;
-  outline: none !important;
-  border-color: #719ece;
-  box-shadow: 0 0 10px #719ece;
-}
 .form .save-button {
   border: none;
   color: white;
   padding: 0.7rem;
   cursor: pointer;
-  background-color: #3cbed0;
+  background-color: #55dfb8;
+}
+.form .save-button:hover {
+  background-color: rgba(85, 223, 184, 0.7);
 }
 .form .save-button:disabled {
   color: #8b8b8b;
@@ -57,12 +54,12 @@ body {
 .lists .todoContainer {
   gap: 0.5rem;
   display: flex;
-  padding: 0.5rem;
   border-radius: 5px;
   margin-top: 0.8rem;
   align-items: center;
   background-color: white;
   justify-content: space-between;
+  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
 }
 .lists .todoContainer i {
   cursor: pointer;
@@ -76,12 +73,16 @@ body {
 }
 
 .fa-check:hover {
-  color: #87eb9f !important;
+  color: #55dfb8 !important;
 }
 
-.todoContainer:hover {
+.todoContainer:nth-child(odd):hover {
   transition: all 0.3s ease-out;
-  box-shadow: 0px 5px 0px #3cbed0;
+  box-shadow: 1px 5px 0px #3cbed0;
+}
+.todoContainer:nth-child(even):hover {
+  transition: all 0.3s ease-out;
+  box-shadow: 1px 5px 0px #e3378d;
 }
 
 .todo {
@@ -106,6 +107,9 @@ body {
   margin-top: 0.7rem;
   border-radius: 5px;
   background-color: #3cbed0;
+}
+.delete-all-button:hover {
+  background-color: rgba(60, 190, 208, 0.7);
 }
 
 .menuContainer {
