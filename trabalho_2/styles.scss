@@ -1,66 +1,197 @@
 * {
     margin: 0;
     padding: 0;
+    font-size: 18px;
     box-sizing: border-box;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
+$pink-color: #e3378d;
+$blue-color: #3cbed0;
+$green-color: #87eb9f;
+$white-color: #f5f5f5;
+$light-gray: #bfbfbf;
+$dark-gary: #8b8b8b;
+$background-color: #121213;
+
 body {
     width: 100%;
-    background-color: skyblue;
+    background-color: $white-color;
 }
 
 .container {
-    width: 30rem;
+    width: 40rem;
     margin: 2rem auto;
-
     .title {
+        font-size: 36px;
         text-align: center;
+        margin-bottom: 2rem;
     }
 }
 
 .form {
-    background-color: aliceblue;
-    margin-top: 1rem;
     display: flex;
-    align-items: center;
-    border-radius: 5px;
     overflow: hidden;
+    margin-top: 1rem;
+    border-radius: 5px;
+    align-items: center;
+    background-color: aliceblue;
 
     input {
         flex: 1;
-        padding: 0.7rem;
         border: none;
-        background-color: transparent;
         outline: none;
+        padding: 0.7rem;
+
+        &:active {
+            border: 1px !important;
+            outline: none !important;
+            border-color: #719ece;
+            box-shadow: 0 0 10px #719ece;
+        }
     }
 
-    .button {
-        padding: 0.7rem;
-        background-color: darkblue;
-        color: white;
-        cursor: pointer;
+    .save-button {
         border: none;
+        color: white;
+        padding: 0.7rem;
+        cursor: pointer;
+        background-color: $blue-color;
+
+        &:disabled {
+            color: $dark-gary;
+            cursor: default;
+            background-color: $light-gray;
+        }
     }
 }
 
-.lists .todo {
+.lists .todoContainer {
     gap: 0.5rem;
     display: flex;
     padding: 0.5rem;
     border-radius: 5px;
-    margin-top: 0.5rem;
+    margin-top: 0.8rem;
     align-items: center;
+    background-color: white;
     justify-content: space-between;
-    background-color: aliceblue;
 
     i {
         cursor: pointer;
+        &:hover {
+            color: $blue-color;
+        }
     }
 }
 
-// .icon {
-//     font-size: 32px;
-//     background-color: azure;
-//     height: 200px;
-// }
+.fa-trash {
+    &:active {
+        color: $pink-color !important;
+    }
+}
+
+.fa-check {
+    &:hover {
+        color: $green-color !important;
+    }
+}
+
+.todoContainer {
+    &:hover {
+        transition: all 0.3s ease-out;
+        box-shadow: 0px 5px 0px $blue-color;
+    }
+}
+
+.todo {
+    width: 90%;
+    gap: 0.5rem;
+    display: flex;
+    outline: none;
+    justify-items: center;
+}
+
+.iconContainer {
+    width: 8%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete-all-button {
+    border: none;
+    color: white;
+    padding: 0.7rem;
+    cursor: pointer;
+    margin-top: 0.7rem;
+    border-radius: 5px;
+    background-color: $blue-color;
+}
+
+.menuContainer {
+    bottom: 0px;
+    padding: 1rem;
+    position: absolute;
+
+    span {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-left: 10px;
+        color: $white-color;
+        transition: all 0.3 ease-out;
+    }
+}
+
+.menuButton {
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin: 0 5px;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 50px;
+    display: inline-block;
+    text-decoration: none;
+    background-color: $white-color;
+    transition: all 0.3s ease-out;
+    box-shadow: 0px 5px 0px $blue-color;
+
+    span {
+        font-size: 18px;
+        font-weight: 800;
+        line-height: 60px;
+        margin-left: 10px;
+        color: $pink-color;
+        transition: all 0.3 ease-out;
+    }
+
+    &:hover {
+        width: 150px;
+        background-color: $white-color;
+        box-shadow: 0px 5px 0px $pink-color;
+        i {
+            color: $pink-color;
+        }
+        .icon {
+            background-color: $white-color;
+        }
+    }
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    transition: all 0.3 ease-out;
+
+    i {
+        font-size: 25px;
+        color: $blue-color;
+        line-height: 60px;
+        transition: all 0.3 ease-out;
+    }
+}
