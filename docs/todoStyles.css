@@ -164,6 +164,9 @@ body {
   width: 150px;
 }
 .menuButton:nth-child(3):hover {
+  width: 150px;
+}
+.menuButton:nth-child(4):hover {
   width: 125px;
 }
 
