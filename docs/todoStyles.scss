@@ -15,6 +15,7 @@ $white-color: #f5f5f5;
 $light-gray: #bfbfbf;
 $dark-gary: #8b8b8b;
 $background-color: #121213;
+$dark-white-color: #f0eeee;
 
 body {
     width: 100%;
@@ -137,8 +138,11 @@ body {
 
 .menuContainer {
     bottom: 0px;
+    display: flex;
     padding: 1rem;
     position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
 
     span {
         font-size: 16px;
@@ -154,14 +158,14 @@ body {
     float: left;
     width: 60px;
     height: 60px;
-    margin: 0 5px;
-    overflow: hidden;
     cursor: pointer;
+    overflow: hidden;
     border-radius: 50px;
     display: inline-block;
     text-decoration: none;
-    background-color: $white-color;
+    margin: 0 5px 25px 5px;
     transition: all 0.3s ease-out;
+    background-color: $dark-white-color;
     box-shadow: 0px 5px 0px $blue-color;
 
     span {
@@ -174,15 +178,23 @@ body {
     }
 
     &:hover {
-        width: 150px;
-        background-color: $white-color;
+        background-color: $dark-white-color;
         box-shadow: 0px 5px 0px $pink-color;
         i {
             color: $pink-color;
         }
         .icon {
-            background-color: $white-color;
+            background-color: $dark-white-color;
         }
+    }
+
+    &:nth-child(1):hover {
+        width: 180px;
+        cursor: default;
+    }
+
+    &:nth-child(2):hover {
+        width: 150px;
     }
 }
 

@@ -3,7 +3,7 @@ const passwordInput = document.querySelector("#password");
 const loginButton = document.querySelector("#loginButton");
 const forgotPassword = document.querySelector("#forgotPassword");
 
-user = "";
+export let user = "";
 let password = "";
 
 loginButton.disabled = true;
@@ -38,3 +38,4 @@ window.addEventListener("change", () => {
         loginButton.disabled = true;
     }
 });
+

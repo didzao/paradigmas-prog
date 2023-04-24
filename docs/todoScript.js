@@ -1,9 +1,20 @@
 
+import { user } from "./script.js";
+
 const form = document.querySelector("#form");
 const lists = document.querySelector("#lists");
 const input = document.querySelector("#input");
 const saveButton = document.querySelector("#saveButton");
 const removeAllButton = document.querySelector('#removeAll');
+
+console.log('>>>', user)
+
+const userSpan = document.querySelector("#userSpan");
+
+const userButton = `Olá, Meg!`;
+const userText = document.createTextNode(userButton);
+
+userSpan.appendChild(userText);
 
 class LocalStorage {
     static addTodoStorage(todoList) {
