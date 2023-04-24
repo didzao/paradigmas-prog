@@ -6,6 +6,8 @@ const removeAllButton = document.querySelector('#removeAll');
 
 const userSpan = document.querySelector("#userSpan");
 
+let inputValue = "";
+
 class LocalStorage {
     static addTodoStorage(todoList) {
         let storage = localStorage.setItem("todo", JSON.stringify(todoList));
@@ -130,20 +132,20 @@ class DisplayTodo {
             iconChange = !iconChange;
         });
     }
-
-    static saveButton(value) {
-        if (value === "") {
-            DisplayTodo.disableSaveButton();
-        } else {
-            DisplayTodo.disableSaveButton(false);
-        }
-    }
 }
+
+input.addEventListener("change", e => {
+    e.preventDefault();
+    const { value } = e.target;
+    if (value === "") {
+        DisplayTodo.disableSaveButton();
+    } else {
+        DisplayTodo.disableSaveButton(false);
+    }
+})
 
 form.addEventListener("submit", e => {
     e.preventDefault();
-
-    DisplayTodo.saveButton(input.value);
 
     let id = Math.floor(Math.random() * 100000);
 
