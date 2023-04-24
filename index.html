@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de tarefas - Login</title>
+    <script type="module" src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <form id="form">
+            <h2>Login</h2>
+            <div class="inputContainer">
+                <input type="text" id="user" maxlength="10" required>
+                <span>Usuário</span>
+                <i></i>
+            </div>
+            <div class="inputContainer">
+                <input type="password" maxlength="6" id="password" required>
+                <span>Senha</span>
+                <i></i>
+            </div>
+            <div class="forgotPasswordContainer">
+                <a href="#" id="forgotPassword">Esqueci a senha</a>
+            </div>
+
+            <button class="submit" id="loginButton">
+                Login
+            </button>
+        </form>
+    </div>
+</body>
+
+</html>
