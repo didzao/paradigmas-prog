@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciador de tarefas</title>
 
-    <script src="todoScript.js" defer></script>
+    <script type="module" src="todoScript.js"></script>
     <link rel="stylesheet" href="todoStyles.css">
     <script src="https://kit.fontawesome.com/106cc0165f.js" crossorigin="anonymous" defer></script>
 
@@ -33,12 +33,34 @@
     </div>
 
     <div class="menuContainer">
+        <div class="menuButton">
+            <div class="icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <span id="userSpan"></span>
+        </div>
         <a class="menuButton" href="https://github.com/didzao/paradigmas-prog" target="_blank">
             <div class="icon">
                 <i class="fa-brands fa-github-alt"></i>
             </div>
             <span>
                 Github
+            </span>
+        </a>
+        <a class="menuButton" href="./report/reportPage.html">
+            <div class="icon">
+                <i class="fa-solid fa-file"></i>
+            </div>
+            <span>
+                Relatório
+            </span>
+        </a>
+        <a class="menuButton" href="index.html">
+            <div class="icon">
+                <i class="fa-solid fa-right-from-bracket fa-flip-horizontal"></i>
+            </div>
+            <span>
+                Sair
             </span>
         </a>
     </div>

@@ -1,9 +1,10 @@
-
 const form = document.querySelector("#form");
 const lists = document.querySelector("#lists");
 const input = document.querySelector("#input");
 const saveButton = document.querySelector("#saveButton");
 const removeAllButton = document.querySelector('#removeAll');
+
+const userSpan = document.querySelector("#userSpan");
 
 class LocalStorage {
     static addTodoStorage(todoList) {
@@ -15,7 +16,16 @@ class LocalStorage {
         let storage = localStorage.getItem("todo") === null ? [] : JSON.parse(localStorage.getItem('todo'));
         return storage;
     }
+
+    static getUserStorage() {
+        let user = localStorage.getItem("user");
+        return user;
+    }
 }
+
+const userText = `Olá, ${LocalStorage.getUserStorage()}`;
+const messageGreetings = document.createTextNode(userText);
+userSpan.appendChild(messageGreetings);
 
 let todoList = LocalStorage.getStorage();
 

@@ -3,7 +3,7 @@ const passwordInput = document.querySelector("#password");
 const loginButton = document.querySelector("#loginButton");
 const forgotPassword = document.querySelector("#forgotPassword");
 
-export let user = "";
+let user = "";
 let password = "";
 
 loginButton.disabled = true;
@@ -25,8 +25,14 @@ forgotPassword.addEventListener('click', e => {
     alert('A SENHA É 117698');
 });
 
+const saveUserAtStorage = (user) => {
+    let storage = localStorage.setItem("user", user);
+    return storage;
+}
+
 loginButton.addEventListener('click', e => {
     e.preventDefault();
+    saveUserAtStorage(user);
     window.location.href = "todoPage.html";
 });
 
@@ -38,3 +44,4 @@ window.addEventListener("change", () => {
         loginButton.disabled = true;
     }
 });
+
